@@ -1,0 +1,176 @@
+---
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+# Encouraging code and data sharing<br> in neuroscience
+
+<br>
+
+```
+Stephen J Eglen                  Cambridge Computational Biology Institute
+https://sje30.github.io          University of Cambridge
+sje30@cam.ac.uk                  @StephenEglen
+```
+
+
+Slides: http://bit.ly/eglen-rdm17
+
+
+<br>
+**Acknowledgements**
+
+Laurent Gatto, Software Sustainability Institute
+
+These slides are available under a
+[**creative common CC-BY**](http://creativecommons.org/licenses/by/4.0/)
+license.
+
+
+<!-- 
+(Last update `r date()`) 
+ -->
+
+
+```{r,include=FALSE}
+require(printr)
+require(knitr)
+require(xtable)
+pbr = function(text) {
+  x = '<div style="font-size: 60%; position: absolute; right: 5%;   width: fit-content; height: fit-content; top:90%; z-index:10">'
+  sprintf("%s%s</div>", x, text)
+}
+doi = function(doi) {
+  ##text=sprintf("[%s](http://dx.doi.org/%s)", doi, doi)
+  text=sprintf('<a href="http://dx.doi.org/%s">%s</a>', doi, doi)
+  pbr(text)
+}
+im1 = function(f,width=600) {
+  sprintf('<center><img src="%s", width=%s></center>\n', knitr::image_uri(f), width)
+}
+```
+
+
+---
+
+# Inverse problems are hard
+
+
+| Score (%) | grade |
+|:---------:|:-----:|
+| 70-100    |    A  |
+| 60-69     |    B  |
+| 50-59     |    C  |
+| 40-49     |    D  |
+| 0-39      |    F  |
+
+
+### Forward problem
+
+I scored 68, what was my grade?
+
+### Inverse problem
+
+I got a B, what was my score?
+
+
+
+---
+
+# Research sharing: the inverse problem
+
+
+`r im1('../../2015/2015-10-23-scidata15/figs/rr.svg')`
+
+
+---
+# Where is the scholarship?
+
+> An article about computational science in a scientific publication
+> is not the scholarship itself, it is merely advertising of the
+> scholarship. The actual scholarship is the complete software
+> development environment and that complete set of instructions that
+> generated the figures.
+
+[Buckheit and Donoho 1995, after Claerbout]
+
+---
+# Moral or selfish approach?
+
+<br>
+
+<!-- ```{r,results='asis',echo=FALSE} -->
+<!-- im1('../../talkfigs/2016/Markowetz2015-selfish.svg',width=600) -->
+<!-- ``` -->
+
+`r im1('../../talkfigs/2016/Markowetz2015-selfish.svg',width=600)`
+
+
+
+
+
+
+`r doi("10.1186/s13059-015-0850-7")`
+
+
+---
+# Selfish reasons to share
+
+Why not align what is good for science with what is good for
+scientists?
+
+
+1. Funding mandates (REF + enforcement from Wellcome Trust)
+2. Credit through data papers
+3. Leads to further collaborations (e.g. "EPAmeadev")
+4. Fixes data bugs / errors in analysis
+5. Prevents data loss [(Vines et al 2014)](http://www.ncbi.nlm.nih.gov/pubmed/24361065). e.g. students have a habit of leaving...
+6. Your future self is probably one of the main beneficiaries of
+   sharing.
+7. *Now* is a very good time to be an open scientist.
+
+
+---
+# Code review pilot
+
+`r im1('../2017-07-20-futurepub/figs/nature_neuro_codereview.png',width=500)`
+
+
+
+`r doi("10.1038/nn.4550")`
+
+
+---
+# Specific recommendations
+
+1. Include enough code to reproduce key figure/result from your paper
+   ("modeldb").
+2. Provide toy examples if your project is too intensive to expect
+   others to run in a few hours.
+3. Version control (github)
+4. Licence (MIT)
+5. Provide data
+6. Provide tests
+7. Use standards 
+8. Use permanent URLs (Zenodo/figshare)
+
+`r doi("10.1038/nn.4550")`
+
+---
+# Other practical tips
+
+* Lobby journals about their code-sharing practices.  [Go Elife!](https://elifesciences.org/inside-elife/c8ca56de/innovation-collaborating-to-devise-the-future-executable-article)
+* Lobby funders likewise.
+* When reviewing articles, ask for code/data to be made available.
+* When starting on a new project, assume code will be public at some
+  point in the future.
+
+
