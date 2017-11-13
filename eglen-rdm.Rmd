@@ -1,8 +1,7 @@
 ---
 output:
   xaringan::moon_reader:
-    lib_dir: libs
-    self_contained: true
+    self_contained: false
     nature:
       highlightStyle: github
       highlightLines: true
@@ -81,7 +80,9 @@ I scored 68, what was my grade?
 
 I got a B, what was my score?
 
+???
 
+What other examples of inverse problems might be useful?
 
 ---
 
